@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * InClass
  */
-public class program {
+public class InClass {
 
     public static void main(String[] args) {
         
@@ -15,17 +15,17 @@ public class program {
         // System.out.println("Hello world!");
         // LocalDateTime time = LocalDateTime.now();
         // System.out.println(time);
-        // String encoding = System.getProperty("console.encoding", "cp866");
-        // Scanner iScanner = new Scanner(System.in, encoding);
-        // System.out.print("Введите имя: ");
-        // String name = iScanner.nextLine();
-        // System.out.println(name);
-        // iScanner.close();
-        // vremya(name);
+        String encoding = System.getProperty("console.encoding", "cp866");
+        Scanner iScanner = new Scanner(System.in, encoding);
+        System.out.print("Введите имя: ");
+        String name = iScanner.nextLine();
+        System.out.println(name);
+        iScanner.close();
+        vremya(name);
 
-        int[] math = endElement(3);
+        // int[] math = endElement(3);
 
-        printMath(math);
+        // printMath(math);
     }
 
     public static String vremya(String name) {
@@ -48,7 +48,7 @@ public class program {
         return res;
     }
 
-    // public static void main(String[] args) {
+    // public static void main(String args) {
     //    String greeting;
     //     if (time.isAfter(LocalTime.of(5,0)) && time.isBefore(LocalTime.of(11, 59)))
     //         greeting = "Доброе утро";
@@ -119,10 +119,6 @@ public class program {
                     nums[nums.length - 1] = temp;
                 }
             }
-            
             return nums;    
         }
-        
-
-
 }
