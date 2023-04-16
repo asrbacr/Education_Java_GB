@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class DZ_01 {
@@ -32,19 +33,24 @@ public class DZ_01 {
                     // Scanner numbFloat = new Scanner(System.in);
                     Double a = iScanner.nextDouble();
 
+                    System.out.print("Введите действие (+, -, *, /, %): ");
+                    char operation = iScanner.next().charAt(0);
+
                     System.out.print("Введите число 2: ");
+
                     Double b = iScanner.nextDouble();
 
-                    System.out.print("Введите действие (+, -, *, /, %): ");
-                    String operation = iScanner.next();
-
+                    String resultat = ResultCalc(a, b, operation);
+                    System.out.printf("%.1f %s %.1f = %s\n\n", a, operation, b, resultat);
                     // Scanner inputOperation = new Scanner(System.in);
                     // inputOperation.close();
-                    if (operation == "stop")
-                        flag = false;
-                    else
-                        System.out.printf("%f %s %f = %f", a, operation, b, ResultCalc(a, b, operation));
-
+                    // if (operation == "stop")
+                    //     flag = false;
+                    // else {
+                    //     Double resultat = ResultCalc(a, b, operation);
+                    //     System.out.printf("%f %s %f = %f\n", a, operation, b, resultat);
+                    // }
+                        
                     // numbFloat.close();
                 }
 
@@ -85,19 +91,18 @@ public class DZ_01 {
 
     // }
 
-    public static Double ResultCalc(Double a, Double b, String operation) {
-
+    public static String ResultCalc(Double a, Double b, char operation) {
         Double result = 0.0;
 
-        if (operation == "+")
+        if (operation == '+')
             result = a + b;
-        else if (operation == "-")
+        else if (operation == '-')
             result = a - b;
-        else if (operation == "*")
+        else if (operation == '*')
             result = a * b;
-        else if (operation == "/")
+        else if (operation == '/')
             result = a / b;
-        else if (operation == "%")
+        else if (operation == '%')
             result = a % b;
 
         // switch (operation) {
@@ -121,7 +126,9 @@ public class DZ_01 {
         // default:
         // break;
         // }
-        return result;
+        DecimalFormat dF = new DecimalFormat("#.###");
+        String Res = dF.format(result);
+        return Res;
     }
 
 }
