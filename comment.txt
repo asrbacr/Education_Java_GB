@@ -1,0 +1,7 @@
+1) while (flag == true) -> можно записать while (flag)
+2) 2 задание лучше воспользовать List https://metanit.com/java/tutorial/5.2.php
+3) DecimalFormat dF = new DecimalFormat("#.###");
+String Res = dF.format(result); //Хороший код
+4) if (operation == "stop") -> у вас operation имеет тип char, нужно было тогда if (operation == 's')
+5) Второй Scanner вводить не нужно
+Все остальное отлично
