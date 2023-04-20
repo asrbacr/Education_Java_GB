@@ -41,15 +41,15 @@ public class DZ_01 {
                     Double b = iScanner.nextDouble();
 
                     String resultat = ResultCalc(a, b, operation);
-                    System.out.printf("%.1f %s %.1f = %s\n\n", a, operation, b, resultat);
                     // Scanner inputOperation = new Scanner(System.in);
                     // inputOperation.close();
-                    // if (operation == "stop")
-                    //     flag = false;
-                    // else {
-                    //     Double resultat = ResultCalc(a, b, operation);
-                    //     System.out.printf("%f %s %f = %f\n", a, operation, b, resultat);
-                    // }
+                    if (operation == 's' || operation == 'S')
+                        flag = false;
+                    else {
+                            // Double resultat = ResultCalc(a, b, operation);
+                            System.out.printf("%f %s %f = %s\n", a, operation, b, resultat);
+                        }
+                    // System.out.printf("%.1f %s %.1f = %s\n\n", a, operation, b, resultat);
                         
                     // numbFloat.close();
                 }
@@ -121,6 +121,7 @@ public class DZ_01 {
             result = a / b;
         else if (operation == '%')
             result = a % b;
+        
 
         // switch (operation) {
         // Float result = 0;
