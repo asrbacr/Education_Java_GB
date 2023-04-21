@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DZ_02",
+            "request": "launch",
+            "mainClass": "DZ_02",
+            "projectName": "Education_Java_GB_e1bd4cc2"
+        },
+        {
+            "type": "java",
             "name": "InClass",
             "request": "launch",
             "mainClass": "InClass",
