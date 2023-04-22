@@ -24,6 +24,7 @@ public class DZ_02 {
         int[] array = { 77, 46, 11, 89, 48, 14, 67, 73, 22, 26 };
         BubbleGrading(array);
 
+        // Задание 4 (калькулятор) я вынес в отдельный файл.
         sc.close();
     }
 
@@ -54,7 +55,7 @@ public class DZ_02 {
     }
 
     public static void BubbleGrading(int[] array) throws IOException {
-        try (FileWriter fw = new FileWriter("log.txt", false)) {
+        try (FileWriter fw = new FileWriter("Result Sort.log", false)) {
             Boolean flag = true;
             while (flag == true) {
                 flag = false;
@@ -64,6 +65,7 @@ public class DZ_02 {
                         array[i] = array[i + 1];
                         array[i + 1] = temp;
                         fw.write(String.valueOf(Arrays.toString(array)) + "\n");
+                        // fw.flush();
                         flag = true;
                     }
                 }
