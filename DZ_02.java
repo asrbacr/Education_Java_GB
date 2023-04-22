@@ -20,20 +20,9 @@ public class DZ_02 {
          * ;
          * System.out.println(ResultSQL(request, reply));
          */
-        int[] array = {77, 46, 11, 89, 48, 14, 67, 73, 22, 26};
-        
-        try (FileWriter fw = new FileWriter("log.txt", false)) {
-            
-            int sortetSize = 0;
-
-            for (int i = 0; i < array.length - 1; i++) {
-                // String a = fw.toString(i);
-                    
-                fw.write(String.valueOf(i) + "\n");
-
-            }
-
-        }
+        // Задание 2
+        int[] array = { 77, 46, 11, 89, 48, 14, 67, 73, 22, 26 };
+        BubbleGrading(array);
 
         sc.close();
     }
@@ -62,6 +51,24 @@ public class DZ_02 {
             }
         }
         return request;
+    }
+
+    public static void BubbleGrading(int[] array) throws IOException {
+        try (FileWriter fw = new FileWriter("log.txt", false)) {
+            Boolean flag = true;
+            while (flag == true) {
+                flag = false;
+                for (int i = 0; i < array.length - 1; i++) {
+                    if (array[i] > array[i + 1]) {
+                        int temp = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = temp;
+                        fw.write(String.valueOf(Arrays.toString(array)) + "\n");
+                        flag = true;
+                    }
+                }
+            }
+        }
     }
 
 }
