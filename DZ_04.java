@@ -1,12 +1,24 @@
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class DZ_04 {
     public static void main(String[] args) {
-        // Задача 1. я подумал, что будет правильней принять список и в функции вернуть тоже список.
+        
         Integer[] userInput = new Integer[] { 77, 46, 11, 89, 48, 14, 67, 73, 22, 26, 47, 1, 67, 23, 4 };
-        System.out.println(Arrays.toString(userInput));
-        System.out.println(Arrays.toString(ConvertList(userInput)));
+        
+        // Задача 1. я подумал, что будет правильней принять список и в функции вернуть тоже список.
+        /* System.out.println(Arrays.toString(userInput));
+        System.out.println(Arrays.toString(ConvertList(userInput))); */
+
+        // Задача 2.
+        LinkedList<Integer> testList = new LinkedList<>(Arrays.asList(userInput));
+        System.out.println(List.copyOf(testList));
+        Queue <Integer> stepQueue = new Queue<>();
+        
+
+
     }
 
     private static Integer[] ConvertList(Integer[] userInput) {
@@ -18,4 +30,5 @@ public class DZ_04 {
         Integer[] result = resulList.toArray(new Integer[resulList.size()]);
         return result;
     }
+
 }
