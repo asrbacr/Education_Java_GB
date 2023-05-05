@@ -17,6 +17,8 @@ public class DZ_04 {
         System.out.println(List.copyOf(testList));
         Queue <Integer> stepQueue = new Queue<>();
         
+        // Задача 3
+        // вынесена в отдельный файл Task_Calculator.java
 
 
     }
