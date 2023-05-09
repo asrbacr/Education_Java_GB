@@ -1,35 +1,52 @@
+import java.lang.invoke.VarHandle;
 import java.util.Arrays;
 import java.util.HashMap;
 
 public class DZ_05 {
     public static void main(String[] args) {
         // Задача 2 сортировка
-        int[] array = {77, 46, 11, 89, 48, 14, 67, 73, 22, 26, 47, 1, 67, 23, 4};
-        heapSort(array);
-        System.out.println(Arrays.toString(array));
-        
+        /*
+         * int[] array = {77, 46, 11, 89, 48, 14, 67, 73, 22, 26, 47, 1, 67, 23, 4};
+         * heapSort(array);
+         * System.out.println(Arrays.toString(array));
+         */
+
         // Задание 1
         HashMap<Integer, String> book = new HashMap<>();
-        book.put(8912978, "Иван Иванов");
-        book.put(8912979, "Светлана Петрова");
-        book.put(8912910, "Кристина Белова");
-        book.put(8912911, "Анна Мусина");
-        book.put(8912912, "Анна Крутова");
-        book.put(8912913, "Иван Юрин");
-        book.put(8912914, "Петр Лыков");
-        book.put(8912915, "Павел Чернов");
-        book.put(8912916, "Петр Чернышов");
-        book.put(8912917, "Мария Федорова");
-        book.put(8912918, "Марина Светлова");
-        book.put(8912919, "Мария Савина");
-        book.put(8912920, "Мария Рыкова");
-        book.put(8912921, "Марина Лугова");
-        book.put(8912922, "Анна Владимирова");
-        book.put(8912923, "Иван Мечников");
-        book.put(8912924, "Петр Петин");
-        book.put(8912925, "Иван Ежов");
+        book.put(8912978, "Иван");
+        book.put(8912979, "Светлана");
+        book.put(8912910, "Кристина");
+        book.put(8912911, "Анна");
+        book.put(8912912, "Анна");
+        book.put(8912913, "Иван");
+        book.put(8912914, "Петр");
+        book.put(8912915, "Павел");
+        book.put(8912916, "Петр");
+        book.put(8912917, "Мария");
+        book.put(8912918, "Марина");
+        book.put(8912919, "Мария");
+        book.put(8912920, "Мария");
+        book.put(8912921, "Марина");
+        book.put(8912922, "Анна");
+        book.put(8912923, "Иван");
+        book.put(8912924, "Петр");
+        book.put(8912925, "Иван");
+        HashMap<String, Integer> sortPeople = new HashMap<>();
+
+        for (var el : book.entrySet()) {
+            String currentValue = el.getValue();
+            if (sortPeople.containsKey(currentValue)) {
+                Integer kol = sortPeople.get(currentValue) + 1;
+                sortPeople.put(currentValue, kol);
+            } else {
+                sortPeople.put(currentValue, 1);
+            }
+        }
+        System.out.println(sortPeople);
+
     }
-// начало функций для сортировки
+
+/*     // начало функций для сортировки
 {
 //вернуть левого потомка `A[i]`
 private static int LEFT(int i) {
@@ -108,7 +125,6 @@ private static void main(String args[]) {
     }
 }
 }
-// конец функций для сортировки
-
-
+    // конец функций для сортировки
+ */
 }
