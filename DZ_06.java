@@ -1,58 +1,45 @@
+import java.util.Arrays;
+import java.util.HashSet;
+
 public class DZ_06 {
     public static void main(String[] args) {
-        
-        Laptop LenovoLaptop = new Laptop();
-        LenovoLaptop.RAM = 4;
-        LenovoLaptop.ROM = 500;
-        LenovoLaptop.OS = "Windows_10";
-        LenovoLaptop.colors = "white";
-        LenovoLaptop.isCD_ROM = false;
 
-        LenovoLaptop.printInfo();
+        Laptop laptop1 = new Laptop();
+        laptop1.Brand = "Lenovo";
+        laptop1.RAM = 4;
+        laptop1.ROM = 500;
+        laptop1.OS = "Windows 10";
+        laptop1.colors = "white";
+        laptop1.isCD_ROM = false;
+        // laptop1.printInfo();
 
-        Laptop DellLaptop = new Laptop(6, 250);
-        DellLaptop.isCD_ROM = true;
-        DellLaptop.printInfo();
+        Laptop laptop2 = new Laptop("Dell", 4, 250);
+        laptop2.isCD_ROM = true;
+        // laptop2.printInfo();
+
+        Laptop laptop3 = new Laptop("Aser", 2, 120);
+        laptop3.colors = "gray";
+        Laptop laptop4 = new Laptop("DNS", 5, 360);
+        laptop4.OS = null;
+        Laptop laptop5 = new Laptop("Samsung", 3, 240);
+        laptop5.isCD_ROM = true;
+        laptop5.OS = "Windows 7";
+        Laptop laptop6 = new Laptop("Apple", 8, 320);
+        laptop6.colors = "green";
+        laptop6.OS = "Mac 10";
+        Laptop laptop7 = new Laptop("Asus", 4, 160, "Windows 10", "brown", false);
+
+        HashSet<Laptop> setLaptops = new HashSet<>(
+                Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6, laptop7));
+        for (Laptop laptop : setLaptops) {
+            laptop.printInfo();
+        }
     }
-
 }
 
-class Laptop {
-    Integer RAM;
-    Integer ROM;
-    String OS;
-    String colors;
-    Boolean isCD_ROM;
+/**
+ * SerchLaptopParam - класс для поиска по параметрам
+ */
+class SerchLaptopParam {
 
-    void printInfo() {
-        // System.out.printf("Laptop info: RAM = %d, ROM = %d, OS = %d, colors = %d, CD-ROM = %d", RAM, ROM, OS, colors, CD_ROM);
-        System.out.println("Laptop info: RAM = " + RAM + ", ROM = " + ROM + ", OS = " + OS + ", colors = " + colors + ", CD-ROM = " + isCD_ROM);
-    }
-
-    /**
-     * По умолчанию все поля заполнены null
-     */
-    Laptop(){
-        RAM = null;
-        ROM = null;
-        OS = null;
-        colors = null;
-        isCD_ROM = null;
-
-    }
-
-    /**
-     * Метод со стандартными значениями: ОС: windows 11, цвет: чёрный, привода нет
-     * @param ram
-     * @param rom
-     */
-    Laptop (Integer ram, Integer rom){
-        RAM = ram;
-        ROM = rom;
-        OS = "Windows 11";
-        colors = "black";
-        isCD_ROM = false;
-
-
-    }
 }
