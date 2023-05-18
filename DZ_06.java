@@ -1,8 +1,13 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class DZ_06 {
+    
     public static void main(String[] args) {
+        Scanner iScanner = new Scanner(System.in);
 
         Laptop laptop1 = new Laptop();
         laptop1.Brand = "Lenovo";
@@ -29,17 +34,31 @@ public class DZ_06 {
         laptop6.OS = "Mac 10";
         Laptop laptop7 = new Laptop("Asus", 4, 160, "Windows 10", "brown", false);
 
+        //Вывод всех варианты 
         HashSet<Laptop> setLaptops = new HashSet<>(
                 Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6, laptop7));
         for (Laptop laptop : setLaptops) {
             laptop.printInfo();
         }
+
+        ArrayList<Laptop> AllLaptops = new ArrayList<>();
+        AllLaptops.add(laptop1);
+        AllLaptops.add(laptop2);
+        AllLaptops.add(laptop3);
+        AllLaptops.add(laptop4);
+        AllLaptops.add(laptop5);
+        AllLaptops.add(laptop6);
+        AllLaptops.add(laptop7);
+
+        HashMap<Integer, String> sortingValues = SerchLaptopParam.AllMainParam();
+        HashMap<String, ArrayList<String>> allStr = SerchLaptopParam.getStringChoices(sortingValues, AllLaptops);
+
+        int firstChoice = SerchLaptopParam.InputUserParam(sortingValues, iScanner);
+
+        int secondChoice = SerchLaptopParam.ExtremeValues(sortingValues, AllLaptops, allStr, iScanner, firstChoice);
+
+        SerchLaptopParam.filterFinal(firstChoice, secondChoice, allStr, AllLaptops);
+
+        iScanner.close();
     }
-}
-
-/**
- * SerchLaptopParam - класс для поиска по параметрам
- */
-class SerchLaptopParam {
-
 }
